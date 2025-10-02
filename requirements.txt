@@ -1,6 +1,9 @@
-opencv-python>=4.5.0
-paddlepaddle>=2.4.0
-paddleocr>=2.6.0
-numpy>=1.21.0
-paho-mqtt>=1.6.0
-Pillow>=8.0.0 
+openai
+openai-whisper
+sounddevice
+soundfile
+paho-mqtt
+numpy
+torch
+tiktoken 
+tts_models.ru.ru_v3 

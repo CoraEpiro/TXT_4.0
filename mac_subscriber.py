@@ -3,7 +3,7 @@ import base64
 import os
 import subprocess
 
-BROKER = "broker.hivemq.com"
+BROKER = "test.mosquitto.org"
 PORT = 1883
 TOPIC = "txt4/image"
 SAVE_DIR = 'received_images'
@@ -50,7 +50,7 @@ def on_message(client, userdata, msg):
         received_images.add(name.strip())
         if len(received_images) >= 4:
             print("📷 Received 4 images. Running detection...")
-            subprocess.run(["python3", "P_detection.py"])
+            subprocess.run(["python", "P_detection.py"])
             client.disconnect()
 
     except Exception as e:
@@ -66,4 +66,4 @@ client.on_log = on_log  # optional for debugging
 
 print("🚀 Waiting for images from robot...")
 client.connect(BROKER, PORT)
-client.loop_forever()
+client.loop_forever() 
